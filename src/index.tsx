@@ -10,8 +10,6 @@ import App from './app.tsx';
 import Store from './store.ts';
 let store = new Store();
 
-console.log(store);
-
 render(
   <FelaProvider renderer={renderer}>
     <MobXProvider store={store}>
