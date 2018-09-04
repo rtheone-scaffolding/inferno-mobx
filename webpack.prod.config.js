@@ -7,6 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: ['./src/index.tsx'],
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.min.js'
@@ -24,10 +25,8 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    contentBase: './dist/',
-    hot: false,
-    progress: true
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
   },
   optimization: {
     splitChunks: {

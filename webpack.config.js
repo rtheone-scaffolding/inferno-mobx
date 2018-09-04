@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   entry: ['./src/index.tsx'],
+  devtool: 'eval',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -22,6 +23,9 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -33,9 +37,8 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: './dist/',
-    hot: false,
-    progress: true
+    contentBase: path.join(__dirname, 'dist'),
+    port: 8000
   },
   plugins: [
     new MiniCssExtractPlugin({
