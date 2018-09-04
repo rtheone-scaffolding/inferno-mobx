@@ -18,7 +18,7 @@
     "inferno-create-element": "^5.5.0",
     "inferno-fela": "^9.0.1",
     "inferno-mobx": "^5.5.0",
-    "mobx": "^5.1.0",
+    "mobx": "4.4.0",
     "mobx-utils": "^5.0.2",
     "normalize.css": "^8.0.0"
   },
