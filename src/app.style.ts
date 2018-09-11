@@ -1,7 +1,7 @@
 import { createComponent } from 'inferno-fela';
 
 export const Button = createComponent(
-  props => css`
+  (props: { color: string }) => css`
     background: ${props.color};
     color: white;
   `,
@@ -10,7 +10,7 @@ export const Button = createComponent(
 );
 
 export const AlternateButton = createComponent(
-  props => css`
+  (props: object) => css`
     background: orangered;
   `,
   Button

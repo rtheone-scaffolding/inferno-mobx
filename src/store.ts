@@ -1,23 +1,25 @@
 import { observable, action, computed } from 'mobx';
 import { createTransformer } from 'mobx-utils';
 
+import { ITransformer } from 'mobx-utils';
+
 export default class Store {
 
-  @observable testValue = 5;
+  @observable public testValue: number = 5;
 
   @action
-  increment = () => {
+  increment = (): void => {
     this.testValue++;
   }
 
   @action
-  decrement = () => {
+  decrement = (): void => {
     this.testValue--;
   }
 
   @computed
-  get sum(): number {
-    return createTransformer(a => a + this.testValue);
+  get sum(): ITransformer<number, number> {
+    return createTransformer((a: number) => a + this.testValue);
   }
 
 }

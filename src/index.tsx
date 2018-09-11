@@ -6,8 +6,8 @@ import { Provider as FelaProvider } from 'inferno-fela';
 import { Provider as MobXProvider } from 'inferno-mobx';
 const renderer = createRenderer();
 
-import App from './app.tsx';
-import Store from './store.ts';
+import App from './app';
+import Store from './store';
 let store = new Store();
 
 render(
